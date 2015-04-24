@@ -8,14 +8,13 @@
 #ifndef DOCTOR_H_
 #define DOCTOR_H_
 
-#include "checkIn.h"
 #include <string>
 
 using namespace std;
 
-class Doctor : public CheckIn{
+class Doctor{
 public:
-	Doctor(string n, int r, string s);
+	Doctor(string n, string s);
 	~Doctor();
 
 	void checkIn();
@@ -27,7 +26,6 @@ public:
 
 private:
 	string name;
-	int roomPref;
 	string spec;
 };
 #endif /* DOCTOR_H_ */

@@ -10,29 +10,20 @@
 
 #include "doctor.h"
 
-Doctor::Doctor(string n, int r, string s){
+Doctor::Doctor(string n, string s){
 	name = n;
-	roomPref = r;
 	spec = s;
+}
+
+Doctor::~Doctor(){
+	delete this;
 }
 
 string Doctor::getName(){
 	return name;
 }
 
-int Doctor::getRoom(){
-	return roomPref;
-}
-
 string Doctor::getSpec(){
 	return spec;
-}
+};
 #endif		//#ifndef DOCTOR_CPP
-
-void Doctor::checkIn(){
-
-}
-
-void Doctor::checkIn(){
-
-}

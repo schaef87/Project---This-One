@@ -10,13 +10,25 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 #include "doctor.h"
 #include "patient.h"
+#include "room.h"
+#include "QueueLinked.h"
 
 int main (){
+	vector<Room> rooms;
+	rooms[25];
+
+	for(int x = 0;x < 25;x++){
+	rooms.at(x).setRoomNum(x+1);
+	rooms.at(x).setRoomState(false);
+	}
 
 	char regType;
+
+
 
 	cout << "Wecome! Please follow our guided check-in process" << endl;
 	cout << endl;
@@ -42,7 +54,15 @@ int main (){
 		cout << "What room would you prefer?" << endl;
 		cin >> room;
 
-		Doctor doc = new Doctor(name, room, spec);
+		while(rooms.at(room).hasDr()){
+			cout << "Room occupied." << endl;
+			cout << "Please select another room." << endl;
+			cin >> room;
+		}
+
+		rooms.at(room).setRoomState(true);
+
+		Doctor* doc = new Doctor(name, spec);
 	}
 
 } //END MAIN

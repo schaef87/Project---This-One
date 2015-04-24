@@ -1,36 +1,32 @@
 /*
  * patient.h
  *
- *  Created on: Apr 22, 2015
+ *  Created on: Apr 24, 2015
  *      Author: schaeferj
  */
 
-#ifndef PATIENT_H_
-#define PATIENT_H_
+#ifndef PATIENTS_H_
+#define PATIENTS_H_
 
-#include "checkIn.h"
 #include <string>
 
 using namespace std;
 
-class Patient : public CheckIn{
+class Patient{
 public:
-	Patient(string n, int a, string spec);
+	Patient(string n, int a, string s);
 	~Patient();
-
-	void checkIn();
-	void checkOut();
 
 	string getName();
 	string getSpec();
 
 private:
-	int timeIn;
+	string name;
 	string spec;
-	bool young();
+	int age;
 };
 
 
 
 
-#endif /* PATIENT_H_ */
+#endif /* PATIENTS_H_ */
