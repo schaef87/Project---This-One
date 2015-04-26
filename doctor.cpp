@@ -5,8 +5,8 @@
  *      Author: schaeferj
  */
 
-#ifndef DOCTOR_CPP
-#define DOCTOR_CPP
+//#ifndef DOCTOR_CPP
+//#define DOCTOR_CPP
 
 #include "doctor.h"
 
@@ -25,5 +25,14 @@ string Doctor::getName(){
 
 string Doctor::getSpec(){
 	return spec;
-};
-#endif		//#ifndef DOCTOR_CPP
+}
+
+void Doctor::roomAssign(int a){
+	rmAssign = a;
+}
+
+int Doctor::getRoom(){
+	return rmAssign;
+}
+;
+//#endif		//#ifndef DOCTOR_CPP

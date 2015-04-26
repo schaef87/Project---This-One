@@ -8,10 +8,10 @@
 #ifndef ROOM_H_
 #define ROOM_H_
 
-#include<string>
-#include "doctor.h"
-#include "QueueLinked.h"
 #include "patient.h"
+#include "QueueLinked.h"
+
+#include<string>
 
 using namespace std;
 
@@ -30,7 +30,7 @@ private:
 	int roomNum;
 	bool doc;
 
-	QueueLinked<Patient> rmOccupants;
+	QueueLinked<Patient> rmOccupants();
 
 };
 #endif /* ROOM_H_ */

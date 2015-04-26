@@ -5,8 +5,8 @@
  *      Author: schaeferj
  */
 
-#ifndef PATIENTS_H_
-#define PATIENTS_H_
+#ifndef PATIENT_H_
+#define PATIENT_H_
 
 #include <string>
 
@@ -29,4 +29,4 @@ private:
 
 
 
-#endif /* PATIENTS_H_ */
+#endif /* PATIENT_H_ */

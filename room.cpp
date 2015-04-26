@@ -5,10 +5,11 @@
  *      Author: schaeferj
  */
 
-#include<string>
 #include"room.h"
 #include "patient.h"
 #include "QueueLinked.h"
+
+#include<string>
 
 using namespace std;
 

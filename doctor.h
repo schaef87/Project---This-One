@@ -19,6 +19,7 @@ public:
 
 	void checkIn();
 	void checkOut();
+	void roomAssign(int a);
 
 	string getName();
 	int getRoom();
@@ -27,5 +28,6 @@ public:
 private:
 	string name;
 	string spec;
+	int rmAssign;
 };
 #endif /* DOCTOR_H_ */

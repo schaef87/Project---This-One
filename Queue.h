@@ -13,6 +13,8 @@
 #include <stdexcept>
 #include <iostream>
 
+#include <string>
+
 using namespace std;
 
 //--------------------------------------------------------------------
@@ -38,15 +40,7 @@ class Queue {
     // derived classes. But they are supposed to be optional implementations.
     // Consequently, they must only be declared here if they are being
     // implemented in the derived classes.
-#if LAB7_TEST2
-    virtual void putFront(const DataType& newDataItem) throw (logic_error) = 0;
-    virtual DataType getRear() throw (logic_error) = 0;
-#endif
-#if LAB7_TEST3
-    virtual int getLength() const = 0;
-#endif
 
-    virtual void showStructure() const = 0;
 };
 
 template <typename DataType>

@@ -22,12 +22,11 @@ int main (){
 	rooms[25];
 
 	for(int x = 0;x < 25;x++){
-	rooms.at(x).setRoomNum(x+1);
-	rooms.at(x).setRoomState(false);
+		rooms.at(x).setRoomNum(x+1);
+		rooms.at(x).setRoomState(false);
 	}
 
 	char regType;
-
 
 
 	cout << "Wecome! Please follow our guided check-in process" << endl;
@@ -60,9 +59,42 @@ int main (){
 			cin >> room;
 		}
 
-		rooms.at(room).setRoomState(true);
-
 		Doctor* doc = new Doctor(name, spec);
+
+		rooms.at(room).setRoomState(true);   //Sets room occupied by doctor
+		doc->rmAssign=room;					 //Assigns room number to doctor
+
+	} else if(regType == 'P'){
+		string name;
+		int age;
+		string spec;
+
+		cout << "What is your name?" << endl;
+		cin >> name;
+		cout << "What is your age" << endl;
+		cin >> age;
+
+		if(age > 15){
+			cout << "What type of doctor would you like to see?" << endl;
+			cin >> spec;
+		} else {
+			spec = "ped";
+		}
+
+		Patient* pat = new Patient(name, age, spec);
+
+		for(int x=0;x<25;x++){
+			if(rooms.at(x).hasDr()){
+				if(/*GET DR INFO HERE*/ == spec){
+					enqueue(patient);
+				}
+				cout << "We are sorry, we do not have the required specialits on duty at this moment"
+						<< endl;
+				}
+			}
+		}
+
 	}
+
 
 } //END MAIN

@@ -1,11 +1,15 @@
 // QueueLinked.h
 
+//#ifndef QUEUE_H
+//#define QUEUE_H
+
 #include <stdexcept>
 #include <iostream>
+#include "Queue.h"
+
+#include <string>
 
 using namespace std;
-
-#include "Queue.h"
 
 template <typename DataType>
 class QueueLinked : public Queue<DataType> {
@@ -43,3 +47,5 @@ class QueueLinked : public Queue<DataType> {
     QueueNode* front;
     QueueNode* back;
 };
+
+//#endif

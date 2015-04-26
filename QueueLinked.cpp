@@ -6,9 +6,6 @@
 //
 //--------------------------------------------------------------------
 
-#ifndef QUEUELINKED_CPP
-#define QUEUELINKED_CPP
-
 #include <iostream>
 
 #include "QueueLinked.h"
@@ -153,6 +150,10 @@ bool QueueLinked<DataType>::isFull() const
     */
 }
 
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//          END OF PORTION USED BY PROJECT
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
 //--------------------------------------------------------------------
 
 //template < typename DataType >
@@ -188,66 +189,66 @@ bool QueueLinked<DataType>::isFull() const
 //--------------------------------------------------------------------
 // Programming Exercise 2
 //--------------------------------------------------------------------
-
-template <typename DataType>
-void QueueLinked<DataType>::putFront(const DataType& newDataItem) throw (logic_error)
-
-//  Enqueues newDataItem at the front of the queue --
-//  deque behavior -- instead of at the back as would normally happen.
-
-{
-    if (isFull()) {
-	throw logic_error("putFront() while queue full");
-    }
-
-    front = new QueueNode(newDataItem, front);
-
-    if (back == 0) 		// Just added first node
-    {
-	back = front;
-    }
-}
-
-//--------------------------------------------------------------------
-
-template <typename DataType>
-DataType QueueLinked<DataType>::getRear() throw (logic_error)
-
-//  Removes and returns the dataItem at the rear of the queue --
-//  deque behavior -- instead of at the head as would normally happen.
-
-{
-    if (isEmpty()) {
-	throw logic_error("getRear() while queue empty");
-    }
-
-    DataType value = back->dataItem;		// Save return value
-    QueueNode* temp;
-    if( front->next == 0 ) {
-        // Only one item in queue. Remove it and reset queue pointers.
-	delete back;
-	front = back = 0;
-    }
-    else
-	// Have more than one item in the queue. Find, remove, and return
-	// rearmost.
-    {
-	// First, find the next-to-last node.
-	for (temp = front; temp->next != back; temp = temp->next)
-	    /* do nothing */ ;
-
-	temp->next = 0;			// Unlink the back/rear item from queue
-	delete back;			// Deallocate the back node
-	back = temp;			// Repoint back pointer at new back node.
-    }
-
-    return value;
-}
-
-//--------------------------------------------------------------------
-// Programming Exercise 3
-//--------------------------------------------------------------------
-
+//
+//template <typename DataType>
+//void QueueLinked<DataType>::putFront(const DataType& newDataItem) throw (logic_error)
+//
+////  Enqueues newDataItem at the front of the queue --
+////  deque behavior -- instead of at the back as would normally happen.
+//
+//{
+//    if (isFull()) {
+//	throw logic_error("putFront() while queue full");
+//    }
+//
+//    front = new QueueNode(newDataItem, front);
+//
+//    if (back == 0) 		// Just added first node
+//    {
+//	back = front;
+//    }
+//}
+//
+////--------------------------------------------------------------------
+//
+//template <typename DataType>
+//DataType QueueLinked<DataType>::getRear() throw (logic_error)
+//
+////  Removes and returns the dataItem at the rear of the queue --
+////  deque behavior -- instead of at the head as would normally happen.
+//
+//{
+//    if (isEmpty()) {
+//	throw logic_error("getRear() while queue empty");
+//    }
+//
+//    DataType value = back->dataItem;		// Save return value
+//    QueueNode* temp;
+//    if( front->next == 0 ) {
+//        // Only one item in queue. Remove it and reset queue pointers.
+//	delete back;
+//	front = back = 0;
+//    }
+//    else
+//	// Have more than one item in the queue. Find, remove, and return
+//	// rearmost.
+//    {
+//	// First, find the next-to-last node.
+//	for (temp = front; temp->next != back; temp = temp->next)
+//	    /* do nothing */ ;
+//
+//	temp->next = 0;			// Unlink the back/rear item from queue
+//	delete back;			// Deallocate the back node
+//	back = temp;			// Repoint back pointer at new back node.
+//    }
+//
+//    return value;
+//}
+//
+////--------------------------------------------------------------------
+//// Programming Exercise 3
+////--------------------------------------------------------------------
+//
 template <typename DataType>
 int QueueLinked<DataType>::getLength() const
 
@@ -261,6 +262,5 @@ int QueueLinked<DataType>::getLength() const
 
     return total;
 }
-
-#endif		// #ifndef QUEUELINKED_CPP
+//
 

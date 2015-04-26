@@ -5,8 +5,9 @@
  *      Author: schaeferj
  */
 
-#include"patient.h"
 #include<string>
+
+#include"patient.h"
 
 using namespace std;
 
