@@ -9,7 +9,7 @@
 #define ROOM_H_
 
 #include "patient.h"
-#include "QueueLinked.h"
+#include "QueueLinked.cpp"
 
 #include<string>
 
